@@ -1,11 +1,7 @@
-import pg from "pg";
 import dotenv from "dotenv";
+import { PrismaClient } from '@prisma/client'
 
 dotenv.config();
+export const prisma = new PrismaClient()
 
-const { Pool } = pg;
-const connection = new Pool({
-  connectionString: process.env.DATABASE_URL
-});
-
-export default connection;
+console.log("banco conectado!")
